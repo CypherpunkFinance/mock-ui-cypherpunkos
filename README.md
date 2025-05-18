@@ -1,54 +1,45 @@
-# React + TypeScript + Vite
+# CypherpunkOS Mock UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a mock User Interface (UI) for CypherpunkOS. It's built using React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## Purpose
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The primary goal of this mock UI is to:
 
-## Expanding the ESLint configuration
+*   Test out the look and feel of CypherpunkOS.
+*   Gather feedback on functionality and user experience *before* implementing complex backend features.
+*   Allow for rapid iteration on UI/UX concepts.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This approach helps in refining the user interface based on early feedback, ensuring that the final product is intuitive, without being slowed down by full-stack implementation during design.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Live Demo
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+You can try out the live mock UI here:
+[https://cypherpunkfinance.github.io/mock-ui-cypherpunkos/](https://cypherpunkfinance.github.io/mock-ui-cypherpunkos/)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Development
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+This project was bootstrapped with Vite.
+
+### Available Scripts
+
+In the project directory, you can run:
+
+*   `npm run dev`: Runs the app in development mode.
+    Open [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal) to view it in the browser.
+The page will reload if you make edits.
+
+*   `npm run build`: Builds the app for production to the `dist` folder.
+    It correctly bundles React in production mode and optimizes the build for the best performance.
+
+*   `npm run lint`: Lints the project files using ESLint.
+
+*   `npm run preview`: Serves the production build locally to preview it before deployment.
+
+## Contributing
+
+(You can add details here if you are open to contributions, e.g., how to report issues, suggest features, or submit pull requests.)
+
+---
+
+*This README replaces the default Vite template information.*

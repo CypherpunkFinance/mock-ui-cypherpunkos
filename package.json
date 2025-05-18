@@ -1,5 +1,6 @@
 {
   "name": "cypherpunkos-react-ui",
+  "homepage": "https://cypherpunkfinance.github.io/mock-ui-cypherpunkos/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
