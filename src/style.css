@@ -669,4 +669,32 @@ input[type="radio"] {
     margin-bottom: var(--padding-md);
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--border-color);
+}
+
+/* Dashboard System Resources Card Fix */
+.stat-line {
+    display: flex;
+    align-items: center; /* Vertically align items in the middle */
+    justify-content: space-between; /* Puts label on left, bar on right */
+    margin-bottom: 0.5em; /* Add some space between stat lines */
+    gap: 0.5em; /* Space between label and progress bar if not using space-between effectively */
+}
+
+.stat-line > span:first-child { /* The label part */
+    white-space: nowrap; /* Prevent label from wrapping */
+    flex-shrink: 0; /* Prevent label from shrinking if progress bar needs space */
+    margin-right: 0.5em; /* Add a bit of space to the right of the label text */
+}
+
+.stat-line .progress-bar-container.small {
+    flex-grow: 1; /* Allow progress bar to take available space */
+    min-width: 100px; /* Give it a minimum width to ensure it's visible */
+}
+
+/* Ensure the text inside the progress bar itself is visible and styled if needed */
+.stat-line .progress-bar {
+    /* Assuming existing styles handle background, color, text-align etc. */
+    /* If text is hard to see, you might need to adjust color or add padding here */
+    padding: 0 0.3em; /* Add a little horizontal padding for text inside bar */
+    font-size: 0.8em; /* Make text slightly smaller if it helps fitting */
 } 

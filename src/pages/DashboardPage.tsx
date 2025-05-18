@@ -22,9 +22,24 @@ const DashboardPage: React.FC = () => {
                 <div className="dashboard-top-row">
                     <div className="card system-resources-card top-row-card">
                         <h3>System Resources</h3>
-                        <p>CPU Usage: <span className="progress-bar-container small"><span className="progress-bar" style={{ width: '35%' }}>35%</span></span></p>
-                        <p>Memory: <span className="progress-bar-container small"><span className="progress-bar" style={{ width: '26%' }}>4.2GB / 16GB</span></span></p>
-                        <p>Disk (SSD): <span className="progress-bar-container small"><span className="progress-bar" style={{ width: '60%' }}>1.2TB / 2TB</span></span></p>
+                        <div className="stat-line">
+                            <span>CPU Usage:</span>
+                            <span className="progress-bar-container small">
+                                <span className="progress-bar" style={{ width: '35%' }}>35%</span>
+                            </span>
+                        </div>
+                        <div className="stat-line">
+                            <span>Memory:</span>
+                            <span className="progress-bar-container small">
+                                <span className="progress-bar" style={{ width: '26%' }}>4.2GB / 16GB</span>
+                            </span>
+                        </div>
+                        <div className="stat-line">
+                            <span>Disk (SSD):</span>
+                            <span className="progress-bar-container small">
+                                <span className="progress-bar" style={{ width: '60%' }}>1.2TB / 2TB</span>
+                            </span>
+                        </div>
                     </div>
 
                     <div className="card alerts-card top-row-card">
