@@ -1,8 +1,9 @@
 import React from 'react';
+// import { Link } from 'react-router-dom'; // Removed - TS6133
 import PageHeader from '../components/PageHeader';
 import AppCard from '../components/AppCard';
 import { getInstalledApps, appStoreMockData } from '../mockData'; // appStoreMockData needed if we manipulate it
-import type { AppDefinition } from '../mockData';
+// import type { AppDefinition } from '../mockData'; // Removed - TS6133
 
 const InstalledAppsPage: React.FC = () => {
   // For this page, we only want non-node apps that are installed.

@@ -2,7 +2,8 @@ import React, { useState, useMemo, useEffect } from 'react';
 import PageHeader from '../components/PageHeader';
 import AppCard from '../components/AppCard';
 import { appStoreMockData } from '../mockData';
-import type { AppDefinition } from '../mockData';
+// import { appsData, categoriesData, collectionsData } from '../mockData'; // Removed - TS6192, TS2305
+// import '../styles/AppStorePage.css'; // Removed - File not found
 
 const MAIN_CATEGORIES = ['All', 'App', 'Chain', 'Theme'];
 

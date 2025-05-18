@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { /*Link,*/ useNavigate } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 import RpcConfigModal from '../components/RpcConfigModal';
 import {
   ALL_AVAILABLE_CHAINS,
   appStoreMockData, // To find plugin details
-  findNodePlugin,   // Helper to get plugin AppDefinition
-  getEnabledChainIds, // Import new helper
   getPluginsForChain, // Import new helper for multiple plugins
+  getEnabledChainIds, // Added this missing import
 } from '../mockData';
 import type { ChainDefinition, AppDefinition } from '../mockData';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PageHeader from '../components/PageHeader';
 import { appStoreMockData, getNodeDisplayName } from '../mockData';
-import type { AppDefinition } from '../mockData';
+// import type { AppDefinition } from '../mockData'; // Removed - TS6133
 
 const DashboardPage: React.FC = () => {
     const nodeset = appStoreMockData.find(app => app.id === 'nodeset');

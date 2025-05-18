@@ -6,10 +6,12 @@ import {
   appStoreMockData,
   getPluginsForChain,
   isChainEnabled,
-  setEnabledChainIds,
   mockLogs
 } from '../mockData';
 import type { ChainDefinition, AppDefinition } from '../mockData';
+// import {
+//   useAppContext, // Removed - TS2307 Cannot find module '../contexts/AppContext'
+// } from '../contexts/AppContext';
 
 // Updated ChainConfig to match ChainsPage.tsx
 interface ChainConfig {
@@ -30,6 +32,8 @@ const ChainDetailPage: React.FC = () => {
   const [isEditingRpc, setIsEditingRpc] = useState<boolean>(false);
   const [tempRpcUrl, setTempRpcUrl] = useState<string>('');
   const [isGloballyEnabled, setIsGloballyEnabled] = useState<boolean>(true);
+
+  // const appContext = useAppContext(); // Removed - TS6133 (and because useAppContext was removed)
 
   useEffect(() => {
     if (!chainId) {
@@ -270,12 +274,12 @@ const ChainDetailPage: React.FC = () => {
   const logIdForPlugin = pluginDetails?.id || chainId;
   const logSnippet = mockLogs[logIdForPlugin]?.split('\n').slice(-5).join('\n') || 'No recent logs available for this chain/plugin.';
   
-  const isPluginRunning = connectionType === 'plugin' && pluginDetails?.installed && pluginDetails?.running;
-  const currentBlock = isPluginRunning && pluginDetails?.id === "nodeset" ? "19876543" : (isPluginRunning ? "1234567" : "N/A");
-  const highestBlock = isPluginRunning && pluginDetails?.id === "nodeset" ? "19876545" : (isPluginRunning ? "1234570" : "N/A");
-  const syncProgress = (isPluginRunning && highestBlock !== "N/A" && currentBlock !== "N/A" && parseInt(highestBlock) !== 0) ? (parseInt(currentBlock) / parseInt(highestBlock) * 100).toFixed(2) + '%' : "N/A";
-  const peers = isPluginRunning ? (pluginDetails?.id === "nodeset" ? "50" : "25") : "N/A";
-  const l1RpcSourceDisplay = (isPluginRunning && layer === 'L2' && pluginDetails) ? (pluginDetails.id === 'l2-base-plugin' ? "L1 - Ethereum (Nodeset - Mock)" : "Configured L1 (Mock)") : "N/A";
+  // const isPluginRunning = connectionType === 'plugin' && pluginDetails?.installed && pluginDetails?.running; // Removed - TS6133
+  // const currentBlock = isPluginRunning && pluginDetails?.id === "nodeset" ? "19876543" : (isPluginRunning ? "1234567" : "N/A"); // Removed - TS6133
+  // const highestBlock = isPluginRunning && pluginDetails?.id === "nodeset" ? "19876545" : (isPluginRunning ? "1234570" : "N/A"); // Removed - TS6133
+  // const syncProgress = (isPluginRunning && highestBlock !== "N/A" && currentBlock !== "N/A" && parseInt(highestBlock) !== 0) ? (parseInt(currentBlock) / parseInt(highestBlock) * 100).toFixed(2) + '%' : "N/A"; // Already commented
+  // const peers = isPluginRunning ? (pluginDetails?.id === "nodeset" ? "50" : "25") : "N/A";
+  // const l1RpcSourceDisplay = (isPluginRunning && layer === 'L2' && pluginDetails) ? (pluginDetails.id === 'l2-base-plugin' ? "L1 - Ethereum (Nodeset - Mock)" : "Configured L1 (Mock)") : "N/A";
 
   const mockNodeConfigText = `# Mock Configuration for ${name} (${connectionType})
 ${connectionType === 'plugin' && pluginDetails ? 
