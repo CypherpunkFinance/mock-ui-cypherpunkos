@@ -36,6 +36,9 @@ jobs:
         working-directory: ./
         run: npm run build # The base path should be picked up from vite.config.js or package.json homepage
 
+      - name: Prepare 404.html for SPA fallback
+        run: cp dist/index.html dist/404.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

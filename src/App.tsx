@@ -26,7 +26,8 @@ function App() {
         {/* <header className="main-header"> ... </header> */}
         <div className="content-area" id="content-area">
           <Routes>
-            <Route path="/" element={<Navigate replace to="/dashboard" />} />
+            {/* <Route path="/" element={<Navigate replace to="/dashboard" />} /> */}
+            <Route path="/" element={<DashboardPage />} /> {/* Root now directly shows DashboardPage */}
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/wallet" element={<WalletPage />} />
             <Route path="/chains" element={<ChainsPage />} />
